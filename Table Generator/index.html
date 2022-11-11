@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/foto.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Table Generator</title>
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <img src="img/logo.png" alt="" />
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="col-1">
+          <div class="content">
+            <div class="content-head">
+             <p>ID</p>
+             <input type="text" id="createId" class="createId" readonly>
+             <button type="button" id="createIdButton">Id Oluştur</button>
+            </div>
+            <ul class="enter-person">
+              <li class="enter-person_li">
+                <label for="name" class="enter-person_label">Ad</label>
+                <input type="text" id="name" class="enter-person_input"
+                placeholder="Adınızı Giriniz. *">
+              </li>
+              <li class="enter-person_li">
+                <label for="lastname" class="enter-person_label">Soyad</label>
+                <input type="text" id="lastname" class="enter-person_input"  placeholder="Soyadınızı Giriniz. *">
+              </li>
+              <li class="enter-person_li">
+                <label for="tcNumber" class="enter-person_label">T.C</label>
+                <input type="number" id="tcNumber" class="enter-person_input"  placeholder="TC Giriniz. *">
+              </li>
+              <li class="enter-person_li">
+                <label for="phone" class="enter-person_label">Telefon</label>
+                <input type="number" id="phone" class="enter-person_input"
+                placeholder="Telefon Giriniz. *">
+              </li>
+            </ul>
+          </div>
+          <div class="col-1-bottom">
+            <h5>Lütfen '*' alanları eksiksiz şekilde doldurunuz.</h6>
+              <button type="submit" id="btnAddNewTask">Kaydet</button>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="content">
+          <ul class="enter-person">
+            <li class="enter-person_li-2">
+              <label for="name-2" class="enter-person_label-2">Ad</label>
+              <input type="text" id="name-2" class="enter-person_input-2"
+              placeholder="Adınızı Giriniz. *">
+            </li>
+            <li class="enter-person_li-2">
+              <label for="lastname-2" class="enter-person_label-2">Soyad</label>
+              <input type="text" id="lastname-2" class="enter-person_input-2"  placeholder="Soyadınızı Giriniz. *">
+            </li>
+            <li class="enter-person_li-2">
+              <label for="tcNumber-2" class="enter-person_label-2">T.C</label>
+              <input type="number" id="tcNumber-2" class="enter-person_input-2"  placeholder="TC Giriniz. *">
+            </li>
+            <li class="enter-person_li-2">
+              <label for="phone-2" class="enter-person_label-2">Telefon</label>
+              <input type="tel" id="phone-2" class="enter-person_input-2"
+              placeholder="Telefon Giriniz. *">
+            </li>   
+            <button type="submit" id="btnDuzenle">Gönder</button>       
+          </ul>
+        </div>
+        </div>
+      </div>
+      
+      <div class="persons">
+        <div class="persons-container">
+          <div class="person-container_flex">
+           <div class="persons-head">
+          <h5>DATABASE</h5>
+            </div>
+           <div class="persons-finder">
+           <input type="text" id="find-person" placeholder="ID" title="Kişi Ara" onkeyup="searchTask()">
+           <button type="submit" id="deleteForIdButton" class="clearButtons" >Temizle</button>
+           <button type="submit" id="btnDelete" class="clearButtons">Hepsini Temizle</button>
+            </div>   
+          </div>
+            <p class="lead">Silmek istediğiniz verinin ID'sini giriniz.</p>
+       </div>
+       <div class="person-info">
+        <table id="myTable">
+          <thead class="person-info_head" id="person-info_head">
+            <tr id="x12">
+              <th>NO</th>
+              <th>ID</th>
+              <th>AD</th>
+              <th>SOYAD</th>
+              <th>TC</th>
+              <th>TELEFON</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="person-info_elements" id="person-info_elements">
+          <!-- <tr id="openTr" class="tr-body">
+            <td>1</td>
+            <td>2</td>
+            <td>Ömer Faruk </td>
+            <td>Güzelim</td>
+            <td>53815067690</td>
+            <td>5436658242</td>
+            <td style="padding-left: 0.4rem ;">
+             <a href=""><i class="fa-solid fa-pen-to-square"></i></a></i>
+             <a href=""><i class="fa-solid fa-trash"></i></a></i>
+            </td>
+           </tr> -->
+          </tbody>
+        </table>       
+       </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+
+  </body>
+</html>
